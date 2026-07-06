@@ -1,0 +1,20 @@
+#: locale=en
+
+## Media
+
+### Title
+panorama_267E4F29_3702_BB5E_41B9_77172A346890.label = 3
+video_22CE75C9_3703_4EDE_417C_B48423C59A11.label = door_open_from3
+
+### Video
+videolevel_2FCBF628_3702_CD5E_41C5_8F7774A667ED.url = media/video_22CE75C9_3703_4EDE_417C_B48423C59A11_en.mp4
+videolevel_2FCBF628_3702_CD5E_41C5_8F7774A667ED.posterURL = media/video_22CE75C9_3703_4EDE_417C_B48423C59A11_poster_en.jpg
+
+### Video Subtitles
+
+## Tour
+
+### Description
+
+### Title
+tour.name = Untitled 52
