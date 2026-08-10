@@ -1,0 +1,18 @@
+@font-face {
+   font-family: "Noto Sans Regular Regular";
+   src: url("fonts/Noto Sans Regular Regular.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Noto Sans Regular Medium";
+   src: url("fonts/Noto Sans Regular Medium.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Noto Sans Regular SemiBold";
+   src: url("fonts/Noto Sans Regular SemiBold.woff2") format("woff2");
+   font-weight: bold;
+   font-style: normal;
+}
