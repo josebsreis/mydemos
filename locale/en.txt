@@ -5,46 +5,46 @@
 ### 360 Video
 
 ### Image
-imlevel_FEBCE700_ED42_FCE4_41E9_B33CADCE461A.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_0.avif
-imlevel_FEBDE700_ED42_FCE4_41D0_3440972A800E.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_1.avif
-imlevel_FEBDC700_ED42_FCE4_41E2_BB4376857CE5.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_2.avif
-imlevel_FEBDD700_ED42_FCE4_41E8_E41C2CE5F9B2.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_3.avif
-imlevel_FEBD06FA_ED42_FD24_41E1_8E7E8379F7A1.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_0.avif
-imlevel_FEBE06FA_ED42_FD24_41EC_9D9DC7D54DF3.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_1.avif
-imlevel_FEBE16FA_ED42_FD24_41D1_F5D6671C88A2.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_2.avif
-imlevel_FEBDE6FB_ED42_FD24_41D3_183C8482BA62.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_3.avif
-imlevel_FEBD46E9_ED42_FD24_41D7_2A877A8F73F0.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_0.avif
-imlevel_FEBE46E9_ED42_FD24_41D8_4BBBCE7CB8CE.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_1.avif
-imlevel_FEBE26E9_ED42_FD24_41B8_BFD7E7499CB4.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_2.avif
-imlevel_FEBE36E9_ED42_FD24_41BE_FFCF6AABED92.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_3.avif
-imlevel_FEBD0698_ED42_FDE4_41E2_CB203FD6AF52.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_0.avif
-imlevel_FEBD1698_ED42_FDE4_41DA_D40C36609B54.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_1.avif
-imlevel_FEBCE698_ED42_FDE4_41E0_C6FB25616F76.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_2.avif
-imlevel_FEBCF698_ED42_FDE4_41BA_8F07567A74DF.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_3.avif
-imlevel_FEBDD6C7_ED42_FD6C_41CD_11C8B5D82636.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_0.avif
-imlevel_FEBDA6C7_ED42_FD6C_41E3_5FDC97D956BD.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_1.avif
-imlevel_FEBDB6C7_ED42_FD6C_41BC_2ED983C56479.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_2.avif
-imlevel_FEBD86C8_ED42_FD64_41AA_C3C9B56AAB03.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_3.avif
-imlevel_FEBDE6B6_ED42_FD2C_41D6_813839B96685.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_0.avif
-imlevel_FEBDF6B6_ED42_FD2C_419A_4037FC4EC8E8.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_1.avif
-imlevel_FEBDC6B6_ED42_FD2C_41E7_E9D9F1C2E69C.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_2.avif
-imlevel_FEBDA6B6_ED42_FD2C_41DE_B289D066D80C.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_3.avif
-imlevel_FEBE269B_ED42_FDE4_41EB_48EF276B705A.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_0.avif
-imlevel_FEBF269B_ED42_FDE4_41DA_FD3EE3D41479.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_1.avif
-imlevel_FEBF069B_ED42_FDE4_41E7_CF67224C661C.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_2.avif
-imlevel_FEBF169B_ED42_FDE4_41EA_360AF9079418.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_3.avif
-imlevel_FBE510BB_ED42_D524_41DC_46EC18F9A824.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_0.avif
-imlevel_FBE500BB_ED42_D524_41E8_12275201E2D5.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_1.avif
-imlevel_FBE4F0BB_ED42_D524_41CD_52BDA05F67BB.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_2.avif
-imlevel_FBE4E0BB_ED42_D524_41E8_6AA36F969933.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_3.avif
-imlevel_FBEE8A2B_ED42_D524_41C3_2D45CEB573C8.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_0.avif
-imlevel_FBEF8A2B_ED42_D524_41C3_96A1CC0BC1C8.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_1.avif
-imlevel_FBEF7A2C_ED42_D53C_41E0_0E97452C6C29.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_2.avif
-imlevel_FBEF6A2C_ED42_D53C_41C4_B1A1F26763B7.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_3.avif
-imlevel_FEBDB6D7_ED42_FD6C_41E6_A65F72BED4A6.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_0.avif
-imlevel_FEBEB6D7_ED42_FD6C_41D1_B2796D1241C5.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_1.avif
-imlevel_FEBE96D7_ED42_FD6C_41C9_676845AEF998.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_2.avif
-imlevel_FEBE66D7_ED42_FD6C_41DC_D59F51E163BF.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_3.avif
+imlevel_E9D1EA42_F035_8C7E_419C_39CE80CE11BE.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_0.avif
+imlevel_E9D7CA42_F035_8C7E_41E8_8FCE9A805200.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_1.avif
+imlevel_E9D72A42_F035_8C7E_41BB_149FD8D5248C.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_2.avif
+imlevel_E9D70A43_F035_8C7E_41DA_CEDB1E836D94.url = media/popup_A3BD21E4_EDB7_DE5B_41E9_D607BD21E764_en_0_3.avif
+imlevel_E9D00A31_F035_8C1A_41B8_31074B5C4ADC.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_0.avif
+imlevel_E9D60A31_F035_8C1A_41E7_44E85EAE4659.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_1.avif
+imlevel_E9D61A31_F035_8C1A_41C0_855AD195B127.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_2.avif
+imlevel_E9D66A31_F035_8C1A_41E5_000D61F02A15.url = media/popup_A3CFC041_EDB7_DE5D_41DE_7AE3CAE9F735_en_0_3.avif
+imlevel_E9D0BA20_F035_8C3A_41DC_5FC8754C52EE.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_0.avif
+imlevel_E9D6AA20_F035_8C3A_419F_F0CD1D2CF163.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_1.avif
+imlevel_E9D6BA20_F035_8C3A_41EB_CFF95DF49AA8.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_2.avif
+imlevel_E9D68A20_F035_8C3A_41C1_64A4D38E128C.url = media/popup_A3D07E5B_EDB7_E26D_41A7_2B3681ECBD10_en_0_3.avif
+imlevel_E9D409D1_F035_8C1A_41BE_2EBA576EA08B.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_0.avif
+imlevel_E9EA09D1_F035_8C1A_41E8_807446A2D0E9.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_1.avif
+imlevel_E9EA69D1_F035_8C1A_41D9_1824E6C3AA8A.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_2.avif
+imlevel_E9EA59D1_F035_8C1A_41EB_D402E2B0591B.url = media/popup_A42FEFB6_EC5F_E227_41ED_10A41DD55683_en_0_3.avif
+imlevel_E9D669FE_F035_8C06_41E7_B5BCD0AFC022.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_0.avif
+imlevel_E9D419FE_F035_8C06_41EA_94789878551C.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_1.avif
+imlevel_E9D449FE_F035_8C06_41E4_DD81329F6815.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_2.avif
+imlevel_E9D459FE_F035_8C06_41B2_1ED182ECD870.url = media/popup_A7BBE73D_EDBC_A225_41C8_36B661C457F9_en_0_3.avif
+imlevel_E9D6E9EC_F035_8C0A_41ED_8AB62841D59E.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_0.avif
+imlevel_E9D499EC_F035_8C0A_41EA_FCF5E2809805.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_1.avif
+imlevel_E9D4E9EC_F035_8C0A_41C0_D0AA5CB66325.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_2.avif
+imlevel_E9D4C9EC_F035_8C0A_41B3_D8A6A19BEAC7.url = media/popup_A7CCA455_EDBC_A665_41C2_424944264239_en_0_3.avif
+imlevel_E9D5F9E2_F035_8C3E_41E8_2922E55B8C14.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_0.avif
+imlevel_E9D529E2_F035_8C3E_41E0_75FDB9C98DC1.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_1.avif
+imlevel_E9D539E2_F035_8C3E_41D8_16B7622ACBBA.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_2.avif
+imlevel_E9D579E4_F035_8C3A_41CB_F453C4B2CA2E.url = media/popup_A7D3521E_EDBC_5DE7_41CF_480432BC35C2_en_0_3.avif
+imlevel_EAE16960_F035_8C3A_41E5_436EF3D084F3.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_0.avif
+imlevel_EAE15961_F035_8C3A_41E2_97298B3AD670.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_1.avif
+imlevel_EAE14961_F035_8C3A_41E2_C9CF8A956019.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_2.avif
+imlevel_EAE2B961_F035_8C3A_41C9_242DF7356BA7.url = media/popup_B56DB2F3_EC57_E23D_41C3_B428152EB7D9_en_0_3.avif
+imlevel_EAEBC80B_F035_8C0E_41EC_5A3630D64A0F.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_0.avif
+imlevel_EAE8380B_F035_8C0E_41E1_81635DD10A57.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_1.avif
+imlevel_EAE9C80B_F035_8C0D_41D3_52B46E01C56C.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_2.avif
+imlevel_EAE9D80C_F035_8C0A_41BB_CD8AB7CBC2F6.url = media/popup_BC3494B8_EC54_E62B_41EA_8537F054B174_en_0_3.avif
+imlevel_E9D6FA0F_F035_8C06_41CB_13C0E68521E8.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_0.avif
+imlevel_E9D5CA0F_F035_8C06_41D3_FCED4D79D2B2.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_1.avif
+imlevel_E9D53A0F_F035_8C06_41CF_86B863959B71.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_2.avif
+imlevel_E9D50A0F_F035_8C06_41E0_6C8B5DD6C157.url = media/popup_BE017132_EDB7_DE3F_41AA_842240E94B04_en_0_3.avif
 
 ### Popup Image
 
@@ -76,10 +76,10 @@ panorama_A2B59FBA_B242_727C_41CF_35DAA83F03F8.label = Concentrated Sulfuric Acid
 video_FA9CCF82_B74E_046E_41C5_D3A206A7CB27.label = Intro bg video
 
 ### Video
-videores_F624C3DD_ED4D_3B1C_41DC_752B040CC2FE.url = media/media_F74C15E7_B807_56DA_41D5_A0F7996EDCB1_en.mp4
-videores_F624C3DD_ED4D_3B1C_41DC_752B040CC2FE.posterURL = media/media_F74C15E7_B807_56DA_41D5_A0F7996EDCB1_poster_en.jpg
-videolevel_F60FAA69_ED42_D524_41E2_5BE87D23EB23.url = media/video_FA9CCF82_B74E_046E_41C5_D3A206A7CB27_en.mp4
-videolevel_F60FAA69_ED42_D524_41E2_5BE87D23EB23.posterURL = media/video_FA9CCF82_B74E_046E_41C5_D3A206A7CB27_poster_en.jpg
+videores_D05CD9FB_F03C_8C0E_41DD_DA7C7E032353.url = media/media_F74C15E7_B807_56DA_41D5_A0F7996EDCB1_en.mp4
+videores_D05CD9FB_F03C_8C0E_41DD_DA7C7E032353.posterURL = media/media_F74C15E7_B807_56DA_41D5_A0F7996EDCB1_poster_en.jpg
+videolevel_D006BEE5_F03C_843A_41E7_165C05BF3D02.url = media/video_FA9CCF82_B74E_046E_41C5_D3A206A7CB27_en.mp4
+videolevel_D006BEE5_F03C_843A_41E7_165C05BF3D02.posterURL = media/video_FA9CCF82_B74E_046E_41C5_D3A206A7CB27_poster_en.jpg
 
 ### Video Subtitles
 
@@ -120,28 +120,29 @@ Image_F71521F3_B805_4EBA_41E0_881BADA5D18D.url = skin/Image_F71521F3_B805_4EBA_4
 Image_F77C535D_B805_53EE_41C9_1E7DC568D5CB.url = skin/Image_F77C535D_B805_53EE_41C9_1E7DC568D5CB_en.jpg
 
 ### Label
+Label_E71E2A11_B756_0C6A_41D4_1D492E8EA2FC.text = EN
 Label_E71EEA11_B756_0C6A_41E6_B607C6393C05.text = EN
 Label_9BEF1571_B49C_759D_41D0_CCA35109478C.text = EN
 Label_9AAC506B_B49C_6B8D_41A5_54F6CD76B9E0.text = EN
-Label_E71E2A11_B756_0C6A_41D4_1D492E8EA2FC.text = EN
 Label_A5F3F14A_B803_4FEA_41D5_9A536FE15AD3.text = EN
 Label_A5F2914A_B803_4FEA_41D5_FCA4DC24722A.text = EN
+Label_D1C243D2_F053_9C1E_41D9_12EE7449AEB4.text = Previous
 Label_E71FCA10_B756_0C6A_41E4_84C105B1884D.text = Select Language
-Label_E7180A15_B756_0C6A_41B7_E7A98390C12D.text = Start Tour
 Label_E7185A15_B756_0C6A_41D8_DDB8748F0ABD.text = Start Tour
+Label_E7180A15_B756_0C6A_41B7_E7A98390C12D.text = Start Tour
 Label_97AA2481_B241_960F_41E1_EEBC5D81D89B.text = {{Title}}
-Label_9B6616AA_B494_B48F_41E5_41E60EAD45BB.text = 繁中
-Label_9B65E6A9_B494_B48D_41DA_554662BA77F1.text = 繁中
 Label_E718BA13_B756_0C6E_41E0_3524CAE3C6C4.text = 繁中
-Label_E719DA12_B756_0C6E_41D8_C74DB28A911C.text = 繁中
-Label_A60C8150_B803_4FF7_41E1_FD45BD1EF89E.text = 繁中
+Label_9B6616AA_B494_B48F_41E5_41E60EAD45BB.text = 繁中
 Label_A60D9151_B803_4FF6_41E4_703B80BEEE3C.text = 繁中
+Label_E719DA12_B756_0C6E_41D8_C74DB28A911C.text = 繁中
+Label_9B65E6A9_B494_B48D_41DA_554662BA77F1.text = 繁中
+Label_A60C8150_B803_4FF7_41E1_FD45BD1EF89E.text = 繁中
 
 ### Multiline Text
-HTMLText_E71FAA0F_B756_0C76_41E2_FC35FBD95AF4.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:center;font-size:50px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:50px;font-family:'Noto Sans Regular SemiBold';">VR Site Tour</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:10px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:12px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="text-align:center;font-size:24px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:24px;font-family:'Noto Sans Regular Medium';">Revolutionizing Semiconductor Industry E-Grade Sulfuric Acid Recycling</SPAN></SPAN></DIV></div>
-HTMLText_E15093C2_B806_D2DA_41E2_8F0DC0011F64.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.926829268292681vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 14001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
-HTMLText_EE6EBA9A_B806_DD6A_41C8_7C5116F2F96E.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.926829268292681vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 45001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
-HTMLText_F5BE2975_B805_3FBE_41B2_27083E8CD932.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.926829268292681vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 9001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
+HTMLText_E71FAA0F_B756_0C76_41E2_FC35FBD95AF4.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:center;font-size:60px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:60px;font-family:'Noto Sans Regular SemiBold';">VR Site Tour</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:10px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:12px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="text-align:center;font-size:30px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:30px;font-family:'Noto Sans Regular Medium';">Revolutionizing Semiconductor Industry E-Grade Sulfuric Acid Recycling</SPAN></SPAN></DIV></div>
+HTMLText_E15093C2_B806_D2DA_41E2_8F0DC0011F64.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.92682926829268vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 14001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
+HTMLText_EE6EBA9A_B806_DD6A_41C8_7C5116F2F96E.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.92682926829268vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 45001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
+HTMLText_F5BE2975_B805_3FBE_41B2_27083E8CD932.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:left;font-size:2.92682926829268vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="font-size:2.93vh;font-family:'Noto Sans Regular SemiBold';">ISO 9001:2015 — Environmental Management System</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:2.93vh;"><BR STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-size:1.2vh;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:150%;text-align:left;font-size:1.829268292682927vh;"><SPAN STYLE="display:inline-block; letter-spacing:0vh; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#88888c;font-size:1.83vh;font-family:'Noto Sans Regular Medium';">Certified by SGS, SAR Technology's environmental management system for circular economy sulfuric acid manufacturing meets the ISO 14001:2015 international standard — a third-party verification of our commitment to regulatory compliance, continuous improvement, and sustainable production.</SPAN></SPAN></DIV></div>
 
 ### Tooltip
 Container_961695B0_B246_B60C_41B1_6D44AD825001.toolTip = Close Scenes List
