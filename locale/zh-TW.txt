@@ -118,25 +118,27 @@ Image_F71521F3_B805_4EBA_41E0_881BADA5D18D.url = skin/Image_F71521F3_B805_4EBA_4
 Image_F77C535D_B805_53EE_41C9_1E7DC568D5CB.url = skin/Image_F77C535D_B805_53EE_41C9_1E7DC568D5CB_en.jpg
 
 ### Label
-Label_A5F3F14A_B803_4FEA_41D5_9A536FE15AD3.text = EN
-Label_9AAC506B_B49C_6B8D_41A5_54F6CD76B9E0.text = EN
-Label_9BEF1571_B49C_759D_41D0_CCA35109478C.text = EN
-Label_E71EEA11_B756_0C6A_41E6_B607C6393C05.text = EN
-Label_E71E2A11_B756_0C6A_41D4_1D492E8EA2FC.text = EN
 Label_A5F2914A_B803_4FEA_41D5_FCA4DC24722A.text = EN
+Label_A5F3F14A_B803_4FEA_41D5_9A536FE15AD3.text = EN
+Label_E71E2A11_B756_0C6A_41D4_1D492E8EA2FC.text = EN
+Label_E71EEA11_B756_0C6A_41E6_B607C6393C05.text = EN
+Label_9BEF1571_B49C_759D_41D0_CCA35109478C.text = EN
+Label_9AAC506B_B49C_6B8D_41A5_54F6CD76B9E0.text = EN
 Label_D4EE2349_F034_7C0A_41A5_4138D3F534CF.text = Next
-Label_D1C243D2_F053_9C1E_41D9_12EE7449AEB4.text = Previous
+Label_DA191860_F0D7_8C3A_4186_0B326A995F16.text = Next
+Label_D70C1A91_F0D5_8C1A_41D2_F5F9FC5B4881.text = Previous
+Label_D70A2A92_F0D5_8C1E_41E1_34BD030FF4E4.text = Previous
 Label_E71FCA10_B756_0C6A_41E4_84C105B1884D.text = 选择语言
 Label_E7185A15_B756_0C6A_41D8_DDB8748F0ABD.text = 开始体验
 Label_E7180A15_B756_0C6A_41B7_E7A98390C12D.text = 开始体验
-Label_D5507715_F035_841A_41EC_167F9B19F2B0.text = {{Title}}
 Label_97AA2481_B241_960F_41E1_EEBC5D81D89B.text = {{Title}}
+Label_D5507715_F035_841A_41EC_167F9B19F2B0.text = {{Title}}
 Label_E718BA13_B756_0C6E_41E0_3524CAE3C6C4.text = 繁中
-Label_9B6616AA_B494_B48F_41E5_41E60EAD45BB.text = 繁中
 Label_A60D9151_B803_4FF6_41E4_703B80BEEE3C.text = 繁中
-Label_E719DA12_B756_0C6E_41D8_C74DB28A911C.text = 繁中
-Label_9B65E6A9_B494_B48D_41DA_554662BA77F1.text = 繁中
 Label_A60C8150_B803_4FF7_41E1_FD45BD1EF89E.text = 繁中
+Label_E719DA12_B756_0C6E_41D8_C74DB28A911C.text = 繁中
+Label_9B6616AA_B494_B48F_41E5_41E60EAD45BB.text = 繁中
+Label_9B65E6A9_B494_B48D_41DA_554662BA77F1.text = 繁中
 
 ### Multiline Text
 HTMLText_E71FAA0F_B756_0C76_41E2_FC35FBD95AF4.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-align:center;font-size:50px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:50px;font-family:'Noto Sans Regular SemiBold';">虚拟现实导览</SPAN></SPAN></DIV><p STYLE="margin:0; line-height:10px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:12px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="text-align:center;font-size:24px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:24px;font-family:'Noto Sans Regular Medium';">革新半导体行业电子级硫酸回收技术</SPAN></SPAN></DIV></div>
