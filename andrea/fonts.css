@@ -1,0 +1,60 @@
+@font-face {
+   font-family: "Karla Medium";
+   src: url("fonts/Karla Medium.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla SemiBold";
+   src: url("fonts/Karla SemiBold.woff2") format("woff2");
+   font-weight: bold;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla Regular";
+   src: url("fonts/Karla Regular.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla Bold";
+   src: url("fonts/Karla Bold.woff2") format("woff2");
+   font-weight: bold;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Poppins Regular";
+   src: url("fonts/Poppins Regular.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Poppins Medium";
+   src: url("fonts/Poppins Medium.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Noto Sans Regular Regular";
+   src: url("fonts/Noto Sans Regular Regular.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla Regular Medium";
+   src: url("fonts/Karla Regular Medium.woff2") format("woff2");
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla Regular ExtraBold";
+   src: url("fonts/Karla Regular ExtraBold.woff2") format("woff2");
+   font-weight: bold;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Karla Regular Bold";
+   src: url("fonts/Karla Regular Bold.woff2") format("woff2");
+   font-weight: bold;
+   font-style: normal;
+}
