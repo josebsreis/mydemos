@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en" data-tour-embed>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Test Virtual Creator Tool</title>
+  <meta property="og:title" content="Test Virtual Creator Tool">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="thumbs/scene-821e9621.jpg">
+  <!-- Written by Tour Studio. Editing this file is fine, but a re-export
+       overwrites it — change the tour in the app instead. -->
+  <meta name="generator" content="Tour Studio 0.0.0 · player 0.0.0 · schema 3">
+  <link rel="stylesheet" href="./player/player.css">
+  <style>
+    html, body { margin: 0; height: 100%; background: #0b0d10; overscroll-behavior: none; }
+    #tour { position: relative; width: 100%; height: 100%; }
+  </style>
+  <style>
+/* ---- the bar ------------------------------------------------------- */
+.tm {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  max-width: min(94vw, 980px);
+  padding: 8px 10px 8px 18px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  pointer-events: auto;
+
+  /* glass */
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.tm-brand {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.tm-nav {
+  display: flex;
+  gap: 4px;
+}
+
+/* the hamburger and its checkbox exist only below the breakpoint */
+.tm-toggle,
+.tm-burger { display: none; }
+
+/* ---- top-level items ----------------------------------------------- */
+.tm-group { position: relative; }
+
+.tm-btn {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out;
+}
+.tm-btn:hover,
+.tm-group:focus-within .tm-btn {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- drop-down panels ---------------------------------------------- */
+.tm-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 16px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s ease-out, transform 0.16s ease-out, visibility 0.16s;
+
+  background: rgba(20, 22, 28, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.tm-group:hover .tm-panel,
+.tm-group:focus-within .tm-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* an invisible bridge so the pointer can cross the gap to the panel */
+.tm-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
+/* ---- scenes panel --------------------------------------------------- */
+.tm-panel-scenes {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 6px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tm-scene {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out;
+}
+.tm-scene:hover { background: rgba(255, 255, 255, 0.14); }
+
+.tm-scene-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.tm-scene-thumb[hidden] { display: none; }
+
+.tm-scene-name {
+  padding: 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tm-scene[data-tour-current] {
+  background: var(--tour-accent, #634469);
+  color: #fff;
+}
+
+/* ---- text panels ----------------------------------------------------- */
+.tm-panel-text {
+  width: 300px;
+  padding: 16px 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.tm-panel-text h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.tm-panel-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+.tm-panel-text code {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 12px;
+}
+
+/* ---- the info sidebar -------------------------------------------------
+   One repeat of every scene, but only the room the visitor is in is drawn.
+   A checkbox holds the open state; the pill and the × are both labels for
+   it, so it opens and closes with no script. */
+.ip-toggle { display: none; }
+
+.ip-open {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 21;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 16px 0 8px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease-out, opacity 0.2s ease-out,
+              transform 0.2s ease-out, visibility 0.2s;
+
+  /* glass */
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+.ip-open:hover { background: rgba(255, 255, 255, 0.20); }
+.ip-open:active { transform: scale(0.97); }
+
+/* the round "i" */
+.ip-open-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--tour-accent, #634469);
+  font-size: 13px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+}
+
+/* while the sidebar is open the pill gets out of the way */
+.ip-toggle:checked ~ .ip-open {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(12px);
+}
+
+.ip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 22;
+  box-sizing: border-box;
+  width: min(360px, calc(100vw - 32px));
+  padding: 22px 24px;
+  border-radius: 20px;
+  color: #fff;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  pointer-events: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(16px);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
+
+  /* glass */
+  background: rgba(20, 22, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.ip-toggle:checked ~ .ip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.ip-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease-out;
+}
+.ip-close:hover { background: rgba(255, 255, 255, 0.24); }
+.ip-close::before,
+.ip-close::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+.ip-close::before { transform: rotate(45deg); }
+.ip-close::after { transform: rotate(-45deg); }
+
+.ip-eyebrow {
+  margin-bottom: 10px;
+  padding-right: 34px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* every scene but the one the visitor is standing in */
+.ip-scene { display: none; }
+.ip-scene[data-tour-current] { display: block; }
+
+.ip-name {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+.ip-name::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: var(--tour-accent, #634469);
+}
+
+.ip-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.80);
+  white-space: pre-wrap;
+}
+
+/* ---- bottom nav ------------------------------------------------------ */
+/* One repeat of every scene. Only three of them are ever drawn: the room
+   the visitor is in (the label), the one before it and the one after it
+   (the arrows). The rest stay hidden. */
+.nb {
+  position: absolute;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  box-sizing: border-box;
+  max-width: calc(100vw - 24px);
+  color: #fff;
+  font-size: 13px;
+  pointer-events: auto;
+
+  /* glass */
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.nb-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: min(380px, calc(100vw - 24px));
+  height: 52px;
+  padding: 0 56px;
+}
+
+/* every scene but the three we want */
+.nb-item {
+  display: none;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* the middle: the room the visitor is in */
+.nb-item[data-tour-current] {
+  display: block;
+  max-width: 100%;
+  pointer-events: none;
+  cursor: default;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.nb-item[data-tour-current] .nb-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* the arrows: the scene just before, and just after, the current one */
+.nb-item:has(+ [data-tour-current]),
+.nb-item[data-tour-current] + .nb-item {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+}
+.nb-item:has(+ [data-tour-current]) { left: 8px; }
+.nb-item[data-tour-current] + .nb-item { right: 8px; }
+
+.nb-item:has(+ [data-tour-current]):hover,
+.nb-item[data-tour-current] + .nb-item:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+.nb-item:has(+ [data-tour-current]):active,
+.nb-item[data-tour-current] + .nb-item:active {
+  transform: scale(0.92);
+}
+
+/* the arrow's own name is the label of the room it leads to — hide it,
+   the chevron says enough */
+.nb-item:has(+ [data-tour-current]) .nb-name,
+.nb-item[data-tour-current] + .nb-item .nb-name {
+  display: none;
+}
+
+/* chevrons, drawn from two borders */
+.nb-item:has(+ [data-tour-current])::before,
+.nb-item[data-tour-current] + .nb-item::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  border-radius: 1px;
+}
+.nb-item:has(+ [data-tour-current])::before {
+  transform: translateX(2px) rotate(-135deg);
+}
+.nb-item[data-tour-current] + .nb-item::before {
+  transform: translateX(-2px) rotate(45deg);
+}
+
+/* ---- tablet ----------------------------------------------------------- */
+@media (max-width: 1100px) {
+  /* the bar reaches the pill — drop the words, keep the "i" */
+  .ip-open { padding: 0; width: 40px; justify-content: center; }
+  .ip-open-text { display: none; }
+  .ip-open-mark { width: 28px; height: 28px; font-size: 14px; }
+}
+
+@media (max-width: 860px) {
+  .tm { gap: 12px; padding-left: 16px; }
+  .tm-btn { padding: 7px 11px; }
+  .tm-panel-scenes { grid-template-columns: repeat(2, 132px); }
+}
+
+/* ---- phones: the bar becomes one drop-down ---------------------------- */
+@media (max-width: 640px) {
+  .tm {
+    top: calc(10px + env(safe-area-inset-top, 0px));
+    gap: 10px;
+    width: calc(100vw - 20px);
+    max-width: 420px;
+    padding: 7px 7px 7px 16px;
+    justify-content: space-between;
+  }
+
+  .tm-brand {
+    display: block;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  /* the hamburger */
+  .tm-burger {
+    display: grid;
+    place-content: center;
+    gap: 4px;
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    cursor: pointer;
+    transition: background-color 0.15s ease-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tm-burger:active { background: rgba(255, 255, 255, 0.26); }
+  .tm-burger span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.18s ease-out, opacity 0.12s ease-out;
+  }
+
+  /* open state: the bars become a cross */
+  .tm-toggle:checked ~ .tm-burger { background: rgba(255, 255, 255, 0.26); }
+  .tm-toggle:checked ~ .tm-burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .tm-toggle:checked ~ .tm-burger span:nth-child(2) { opacity: 0; }
+  .tm-toggle:checked ~ .tm-burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* the drop-down itself: every section stacked in one scrolling sheet */
+  .tm-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: block;
+    box-sizing: border-box;
+    max-height: calc(100vh - 150px - env(safe-area-inset-top, 0px));
+    max-height: calc(100dvh - 150px - env(safe-area-inset-top, 0px));
+    padding: 8px;
+    border-radius: 20px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0.18s;
+
+    background: rgba(20, 22, 28, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.44),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+  .tm-toggle:checked ~ .tm-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* sections read as headed lists, not as nested menus */
+  .tm-group + .tm-group {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .tm-btn {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+  }
+  .tm-btn:hover,
+  .tm-group:focus-within .tm-btn { background: transparent; }
+
+  /* panels stop being panels — they sit in the flow of the sheet */
+  .tm-panel,
+  .tm-group:hover .tm-panel,
+  .tm-group:focus-within .tm-panel {
+    position: static;
+    transform: none;
+    width: auto;
+    padding: 0 4px 4px;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    border: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    transition: none;
+  }
+  .tm-panel::before { display: none; }
+
+  /* scenes: a list of rows, thumb beside the name */
+  .tm-panel-scenes {
+    display: block;
+    max-height: none;
+    overflow: visible;
+  }
+  .tm-scene {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  .tm-scene + .tm-scene { margin-top: 2px; }
+  .tm-scene-thumb {
+    flex: none;
+    width: 54px;
+    border-radius: 5px;
+  }
+  .tm-scene-name { min-width: 0; }
+
+  .tm-panel-text { font-size: 12.5px; }
+  .tm-panel-text h3 { display: none; }
+
+  /* ---- the info sidebar on phones -----------------------------------
+     The bar owns the top of the screen, so the pill sits down beside the
+     bottom nav, and the sidebar comes up as a sheet from the bottom. */
+  .ip-open {
+    top: auto;
+    right: 12px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+  }
+  .ip-toggle:checked ~ .ip-open { transform: translateY(12px); }
+
+  .ip {
+    top: auto;
+    right: 10px;
+    left: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    max-height: 62vh;
+    max-height: 62dvh;
+    padding: 20px;
+    transform: translateY(18px);
+  }
+  .ip-toggle:checked ~ .ip { transform: translateY(0); }
+
+  .ip-name { font-size: 17px; }
+  .ip-text { font-size: 13px; }
+
+  /* ---- bottom bar stays inside the screen ---------------------------- */
+  .nb {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 20px);
+    font-size: 12px;
+  }
+  .nb-track {
+    width: min(320px, calc(100vw - 20px));
+    height: 48px;
+    padding: 0 50px;
+  }
+}
+
+/* ---- very small phones ------------------------------------------------ */
+@media (max-width: 380px) {
+  .tm { padding-left: 13px; gap: 8px; }
+  .tm-brand { font-size: 12px; }
+
+  .nb-track {
+    width: calc(100vw - 20px);
+    height: 44px;
+    padding: 0 46px;
+  }
+  .nb-item:has(+ [data-tour-current]),
+  .nb-item[data-tour-current] + .nb-item {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+  }
+
+  /* the nav pill and the info button share the row */
+  .ip-open { width: 40px; height: 40px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* ---- short / landscape phones ----------------------------------------- */
+@media (max-height: 460px) and (max-width: 900px) {
+  .tm { top: calc(8px + env(safe-area-inset-top, 0px)); }
+  .tm-nav { max-height: calc(100vh - 90px); max-height: calc(100dvh - 90px); }
+  .nb { bottom: calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .nb-track { height: 44px; }
+
+  .ip {
+    top: calc(8px + env(safe-area-inset-top, 0px));
+    left: auto;
+    right: 10px;
+    bottom: 10px;
+    width: min(340px, calc(100vw - 20px));
+    max-height: none;
+    padding: 16px 18px;
+    transform: translateX(16px);
+  }
+  .ip-toggle:checked ~ .ip { transform: translateX(0); }
+}
+  </style>
+</head>
+<body>
+  <div id="tour">
+    <div class="tour-skin"><header class="tm" aria-label="Tour menu">
+  <div class="tm-brand">Test Virtual Creator Tool</div>
+
+  <input class="tm-toggle" id="tm-toggle" type="checkbox">
+  <label class="tm-burger" for="tm-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </label>
+
+  <nav class="tm-nav">
+    <div class="tm-group">
+      <button class="tm-btn" type="button">Panoramas</button>
+      <div class="tm-panel tm-panel-scenes" data-tour-scenes>
+        <button class="tm-scene" type="button">
+          <img class="tm-scene-thumb" data-tour-field="thumb" alt="" hidden>
+          <span class="tm-scene-name" data-tour-field="name"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tm-group">
+      <button class="tm-btn" type="button">Floorplan</button>
+      <div class="tm-panel tm-panel-text">
+        <h3>Floorplan</h3>
+        <p>No floorplan has been added to this tour yet. Drop one into <code>public/floorplans/</code> and it can be shown here.</p>
+      </div>
+    </div>
+
+    <div class="tm-group">
+      <button class="tm-btn" type="button">Info</button>
+      <div class="tm-panel tm-panel-text">
+        <h3>About this tour</h3>
+        <p>Seven panoramas you can walk between. Drag to look around, scroll to zoom, and use the menu above to jump straight to a room.</p>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ---- the info sidebar, and the button that opens it ---------------- -->
+<input class="ip-toggle" id="ip-toggle" type="checkbox">
+
+<label class="ip-open" for="ip-toggle" aria-label="About this location">
+  <span class="ip-open-mark">i</span>
+  <span class="ip-open-text">About this room</span>
+</label>
+
+<aside class="ip" aria-label="About this location">
+  <label class="ip-close" for="ip-toggle" aria-label="Close"></label>
+  <div class="ip-eyebrow">About this location</div>
+
+  <div class="ip-body" data-tour-scenes>
+    <article class="ip-scene">
+      <h2 class="ip-name" data-tour-field="name"></h2>
+      <p class="ip-text" data-tour-field="subtitle"></p>
+    </article>
+  </div>
+</aside>
+
+<nav class="nb" aria-label="Scene navigation">
+  <div class="nb-track" data-tour-scenes>
+    <button class="nb-item" type="button">
+      <span class="nb-name" data-tour-field="name"></span>
+    </button>
+  </div>
+</nav></div>
+  </div>
+  <noscript>
+    <p style="color:#f2f4f7;font:14px system-ui;padding:2rem;text-align:center">
+      This virtual tour needs JavaScript to run.
+    </p>
+  </noscript>
+  <script type="application/json" id="tour-doc">{"schema":3,"id":"tour-a597644a","title":"Test Virtual Creator Tool","locales":{"default":"en","available":["en"]},"theme":{"accent":"#3b82f6","panelBg":"#111111","radius":"12px"},"tooltipStyle":{"background":"#1a1d24","backgroundOpacity":0.96,"textColor":"#ffffff","fontSize":13,"padding":8,"radius":6},"components":[{"id":"comp-d023f9f9","name":"Style 1","variants":[{"id":"var-2932a646","name":"Navigation","style":{"builtinIcon":"arrow","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"This is a label for the hotspot","textColor":"#ffffff","fontSize":13,"size":22,"padding":9,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2,"opacity":1}},{"id":"var-a43a4e23","name":"Variant 2","style":{"builtinIcon":"arrow","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"This is a label for the hotspot","textColor":"#ffffff","fontSize":13,"size":22,"padding":9,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2,"opacity":1}}]}],"assets":[],"variables":[],"scenes":[{"id":"scene-821e9621","name":"MOR 360PANO 01","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-01-d57e1a31","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-821e9621.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-9be07a84","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-a2d24ead","name":"To MOR 360PANO 02","geometry":{"kind":"point","yaw":1.7592918860102844,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-dbda0115"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.781Z","edited":true}},{"id":"hs-88e71bab","name":"To MOR 360PANO 03","geometry":{"kind":"point","yaw":2.7646015351590174,"pitch":0},"form":"icon","style":{"builtinIcon":"arrow","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":22,"padding":9,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2,"opacity":1},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-b19f9eea"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z","edited":true}}]}]},{"id":"scene-61d0b528","name":"MOR 360PANO 07","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-07-4451ec5f","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-61d0b528.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-d465df11","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-9de85226","name":"To MOR 360PANO 03","geometry":{"kind":"point","yaw":0.4398229715025707,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-b19f9eea"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}],"on":[]},{"id":"scene-dbda0115","name":"MOR 360PANO 02","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-02-418e075e","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-dbda0115.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-fcfb6642","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-e7e9660a","name":"To MOR 360PANO 01","geometry":{"kind":"point","yaw":-1.0681415022205296,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-821e9621"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-8c2172d8","name":"To MOR 360PANO 03","geometry":{"kind":"point","yaw":-2.8902652413026098,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-b19f9eea"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}]},{"id":"scene-b19f9eea","name":"MOR 360PANO 03","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-03-ef5fec95","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-b19f9eea.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-53d93841","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-b52a1575","name":"To MOR 360PANO 01","geometry":{"kind":"point","yaw":-1.8221237390820801,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-821e9621"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-884a98e5","name":"To MOR 360PANO 02","geometry":{"kind":"point","yaw":-1.4451326206513047,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-dbda0115"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-310fb500","name":"To MOR 360PANO 07","geometry":{"kind":"point","yaw":1.4451326206513047,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-61d0b528"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-f544ebd1","name":"To MOR 360PANO 04","geometry":{"kind":"point","yaw":-0.6911503837897544,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-26ba7ca3"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}]},{"id":"scene-26ba7ca3","name":"MOR 360PANO 04","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-04-09a4ccd4","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-26ba7ca3.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-a4a4c4ca","name":"Layer 2","visible":true,"locked":true,"hotspots":[{"id":"hs-3bfe3b7a","name":"To MOR 360PANO 03","geometry":{"kind":"point","yaw":1.5707963267948966,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-b19f9eea"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-7f0be82e","name":"To MOR 360PANO 05","geometry":{"kind":"point","yaw":-2.9530970943744053,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-12a34c35"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}},{"id":"hs-007f04a0","name":"To MOR 360PANO 06","geometry":{"kind":"point","yaw":-1.0681415022205296,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-5227fa38"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}]},{"id":"scene-12a34c35","name":"MOR 360PANO 05","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-05-f3c91c1c","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-12a34c35.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-0a2a2a60","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-57a8e834","name":"To MOR 360PANO 04","geometry":{"kind":"point","yaw":-1.9477874452256718,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-26ba7ca3"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}]},{"id":"scene-5227fa38","name":"MOR 360PANO 06","projection":"equirect","source":{"kind":"tiled","dir":"tiles/mor-360pano-06-32a1a828","width":11904,"cols":16,"rows":8},"thumbnail":"thumbs/scene-5227fa38.jpg","initialView":{"yaw":0,"pitch":0},"layers":[{"id":"layer-cdd043bd","name":"Hotspots","visible":true,"locked":false,"hotspots":[{"id":"hs-fe422ddb","name":"To MOR 360PANO 04","geometry":{"kind":"point","yaw":2.199114857512855,"pitch":0},"form":"icon","style":{"builtinIcon":"dot","iconColor":"#ffffff","background":"#3b82f6","radius":999,"text":"{{target.name}}","textColor":"#ffffff","fontSize":12,"size":14,"padding":6,"effect":"none","effectColor":"#3b82f6","effectOpacity":0.7,"effectSpeed":1.6,"effectSize":44,"effectStroke":2,"fill":"#3b82f6","fillOpacity":0.28,"stroke":"#3b82f6","strokeWidth":2},"on":[{"event":"click","actions":[{"type":"goto","targetSceneId":"scene-26ba7ca3"}]}],"provenance":{"source":"ai","at":"2026-08-19T14:04:05.782Z"}}]}]}],"skin":{"html":"\u003cheader class=\"tm\" aria-label=\"Tour menu\">\n  \u003cdiv class=\"tm-brand\">Test Virtual Creator Tool\u003c/div>\n\n  \u003cinput class=\"tm-toggle\" id=\"tm-toggle\" type=\"checkbox\">\n  \u003clabel class=\"tm-burger\" for=\"tm-toggle\" aria-label=\"Menu\">\n    \u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\n  \u003c/label>\n\n  \u003cnav class=\"tm-nav\">\n    \u003cdiv class=\"tm-group\">\n      \u003cbutton class=\"tm-btn\" type=\"button\">Panoramas\u003c/button>\n      \u003cdiv class=\"tm-panel tm-panel-scenes\" data-tour-scenes>\n        \u003cbutton class=\"tm-scene\" type=\"button\">\n          \u003cimg class=\"tm-scene-thumb\" data-tour-field=\"thumb\" alt=\"\" hidden>\n          \u003cspan class=\"tm-scene-name\" data-tour-field=\"name\">\u003c/span>\n        \u003c/button>\n      \u003c/div>\n    \u003c/div>\n\n    \u003cdiv class=\"tm-group\">\n      \u003cbutton class=\"tm-btn\" type=\"button\">Floorplan\u003c/button>\n      \u003cdiv class=\"tm-panel tm-panel-text\">\n        \u003ch3>Floorplan\u003c/h3>\n        \u003cp>No floorplan has been added to this tour yet. Drop one into \u003ccode>public/floorplans/\u003c/code> and it can be shown here.\u003c/p>\n      \u003c/div>\n    \u003c/div>\n\n    \u003cdiv class=\"tm-group\">\n      \u003cbutton class=\"tm-btn\" type=\"button\">Info\u003c/button>\n      \u003cdiv class=\"tm-panel tm-panel-text\">\n        \u003ch3>About this tour\u003c/h3>\n        \u003cp>Seven panoramas you can walk between. Drag to look around, scroll to zoom, and use the menu above to jump straight to a room.\u003c/p>\n      \u003c/div>\n    \u003c/div>\n  \u003c/nav>\n\u003c/header>\n\n\u003c!-- ---- the info sidebar, and the button that opens it ---------------- -->\n\u003cinput class=\"ip-toggle\" id=\"ip-toggle\" type=\"checkbox\">\n\n\u003clabel class=\"ip-open\" for=\"ip-toggle\" aria-label=\"About this location\">\n  \u003cspan class=\"ip-open-mark\">i\u003c/span>\n  \u003cspan class=\"ip-open-text\">About this room\u003c/span>\n\u003c/label>\n\n\u003caside class=\"ip\" aria-label=\"About this location\">\n  \u003clabel class=\"ip-close\" for=\"ip-toggle\" aria-label=\"Close\">\u003c/label>\n  \u003cdiv class=\"ip-eyebrow\">About this location\u003c/div>\n\n  \u003cdiv class=\"ip-body\" data-tour-scenes>\n    \u003carticle class=\"ip-scene\">\n      \u003ch2 class=\"ip-name\" data-tour-field=\"name\">\u003c/h2>\n      \u003cp class=\"ip-text\" data-tour-field=\"subtitle\">\u003c/p>\n    \u003c/article>\n  \u003c/div>\n\u003c/aside>\n\n\u003cnav class=\"nb\" aria-label=\"Scene navigation\">\n  \u003cdiv class=\"nb-track\" data-tour-scenes>\n    \u003cbutton class=\"nb-item\" type=\"button\">\n      \u003cspan class=\"nb-name\" data-tour-field=\"name\">\u003c/span>\n    \u003c/button>\n  \u003c/div>\n\u003c/nav>\n","css":"/* ---- the bar ------------------------------------------------------- */\n.tm {\n  position: absolute;\n  top: 16px;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 20;\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  box-sizing: border-box;\n  max-width: min(94vw, 980px);\n  padding: 8px 10px 8px 18px;\n  border-radius: 999px;\n  color: #fff;\n  font-size: 13px;\n  pointer-events: auto;\n\n  /* glass */\n  background: rgba(255, 255, 255, 0.10);\n  border: 1px solid rgba(255, 255, 255, 0.22);\n  backdrop-filter: blur(18px) saturate(160%);\n  -webkit-backdrop-filter: blur(18px) saturate(160%);\n  box-shadow:\n    0 8px 32px rgba(0, 0, 0, 0.32),\n    inset 0 1px 0 rgba(255, 255, 255, 0.28);\n}\n\n.tm-brand {\n  font-weight: 600;\n  letter-spacing: 0.01em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);\n}\n\n.tm-nav {\n  display: flex;\n  gap: 4px;\n}\n\n/* the hamburger and its checkbox exist only below the breakpoint */\n.tm-toggle,\n.tm-burger { display: none; }\n\n/* ---- top-level items ----------------------------------------------- */\n.tm-group { position: relative; }\n\n.tm-btn {\n  padding: 7px 14px;\n  border: 0;\n  border-radius: 999px;\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  font-weight: 500;\n  white-space: nowrap;\n  cursor: pointer;\n  transition: background-color 0.15s ease-out;\n}\n.tm-btn:hover,\n.tm-group:focus-within .tm-btn {\n  background: rgba(255, 255, 255, 0.18);\n}\n\n/* ---- drop-down panels ---------------------------------------------- */\n.tm-panel {\n  position: absolute;\n  top: calc(100% + 12px);\n  left: 50%;\n  transform: translateX(-50%) translateY(-6px);\n  box-sizing: border-box;\n  padding: 8px;\n  border-radius: 16px;\n  color: #fff;\n  opacity: 0;\n  visibility: hidden;\n  transition: opacity 0.16s ease-out, transform 0.16s ease-out, visibility 0.16s;\n\n  background: rgba(20, 22, 28, 0.45);\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  backdrop-filter: blur(22px) saturate(160%);\n  -webkit-backdrop-filter: blur(22px) saturate(160%);\n  box-shadow:\n    0 16px 40px rgba(0, 0, 0, 0.4),\n    inset 0 1px 0 rgba(255, 255, 255, 0.22);\n}\n.tm-group:hover .tm-panel,\n.tm-group:focus-within .tm-panel {\n  opacity: 1;\n  visibility: visible;\n  transform: translateX(-50%) translateY(0);\n}\n\n/* an invisible bridge so the pointer can cross the gap to the panel */\n.tm-panel::before {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: -12px;\n  height: 12px;\n}\n\n/* ---- scenes panel --------------------------------------------------- */\n.tm-panel-scenes {\n  display: grid;\n  grid-template-columns: repeat(2, 150px);\n  gap: 6px;\n  max-height: 60vh;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: thin;\n}\n\n.tm-scene {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding: 6px;\n  border: 0;\n  border-radius: 10px;\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  font-size: 12px;\n  text-align: left;\n  cursor: pointer;\n  transition: background-color 0.15s ease-out;\n}\n.tm-scene:hover { background: rgba(255, 255, 255, 0.14); }\n\n.tm-scene-thumb {\n  display: block;\n  width: 100%;\n  aspect-ratio: 16 / 9;\n  object-fit: cover;\n  border-radius: 6px;\n  background: rgba(255, 255, 255, 0.08);\n}\n.tm-scene-thumb[hidden] { display: none; }\n\n.tm-scene-name {\n  padding: 0 2px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.tm-scene[data-tour-current] {\n  background: var(--tour-accent, #634469);\n  color: #fff;\n}\n\n/* ---- text panels ----------------------------------------------------- */\n.tm-panel-text {\n  width: 300px;\n  padding: 16px 18px;\n  font-size: 13px;\n  line-height: 1.5;\n}\n.tm-panel-text h3 {\n  margin: 0 0 6px;\n  font-size: 13px;\n  font-weight: 600;\n}\n.tm-panel-text p {\n  margin: 0;\n  color: rgba(255, 255, 255, 0.78);\n}\n.tm-panel-text code {\n  padding: 1px 4px;\n  border-radius: 4px;\n  background: rgba(255, 255, 255, 0.14);\n  font-size: 12px;\n}\n\n/* ---- the info sidebar -------------------------------------------------\n   One repeat of every scene, but only the room the visitor is in is drawn.\n   A checkbox holds the open state; the pill and the × are both labels for\n   it, so it opens and closes with no script. */\n.ip-toggle { display: none; }\n\n.ip-open {\n  position: absolute;\n  top: 16px;\n  right: 16px;\n  z-index: 21;\n  display: flex;\n  align-items: center;\n  gap: 9px;\n  box-sizing: border-box;\n  height: 40px;\n  padding: 0 16px 0 8px;\n  border-radius: 999px;\n  color: #fff;\n  font-size: 13px;\n  font-weight: 500;\n  white-space: nowrap;\n  cursor: pointer;\n  pointer-events: auto;\n  -webkit-tap-highlight-color: transparent;\n  transition: background-color 0.15s ease-out, opacity 0.2s ease-out,\n              transform 0.2s ease-out, visibility 0.2s;\n\n  /* glass */\n  background: rgba(255, 255, 255, 0.10);\n  border: 1px solid rgba(255, 255, 255, 0.22);\n  backdrop-filter: blur(18px) saturate(160%);\n  -webkit-backdrop-filter: blur(18px) saturate(160%);\n  box-shadow:\n    0 8px 32px rgba(0, 0, 0, 0.32),\n    inset 0 1px 0 rgba(255, 255, 255, 0.28);\n}\n.ip-open:hover { background: rgba(255, 255, 255, 0.20); }\n.ip-open:active { transform: scale(0.97); }\n\n/* the round \"i\" */\n.ip-open-mark {\n  display: grid;\n  place-items: center;\n  flex: none;\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  background: var(--tour-accent, #634469);\n  font-size: 13px;\n  font-weight: 700;\n  font-style: italic;\n  font-family: Georgia, \"Times New Roman\", serif;\n  line-height: 1;\n}\n\n/* while the sidebar is open the pill gets out of the way */\n.ip-toggle:checked ~ .ip-open {\n  opacity: 0;\n  visibility: hidden;\n  transform: translateX(12px);\n}\n\n.ip {\n  position: absolute;\n  top: 16px;\n  right: 16px;\n  bottom: 16px;\n  z-index: 22;\n  box-sizing: border-box;\n  width: min(360px, calc(100vw - 32px));\n  padding: 22px 24px;\n  border-radius: 20px;\n  color: #fff;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: thin;\n  pointer-events: auto;\n\n  opacity: 0;\n  visibility: hidden;\n  transform: translateX(16px);\n  transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;\n\n  /* glass */\n  background: rgba(20, 22, 28, 0.55);\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  backdrop-filter: blur(22px) saturate(160%);\n  -webkit-backdrop-filter: blur(22px) saturate(160%);\n  box-shadow:\n    0 16px 40px rgba(0, 0, 0, 0.44),\n    inset 0 1px 0 rgba(255, 255, 255, 0.22);\n}\n.ip-toggle:checked ~ .ip {\n  opacity: 1;\n  visibility: visible;\n  transform: translateX(0);\n}\n\n.ip-close {\n  position: absolute;\n  top: 14px;\n  right: 14px;\n  display: grid;\n  place-items: center;\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.12);\n  cursor: pointer;\n  -webkit-tap-highlight-color: transparent;\n  transition: background-color 0.15s ease-out;\n}\n.ip-close:hover { background: rgba(255, 255, 255, 0.24); }\n.ip-close::before,\n.ip-close::after {\n  content: \"\";\n  position: absolute;\n  width: 12px;\n  height: 2px;\n  border-radius: 2px;\n  background: currentColor;\n}\n.ip-close::before { transform: rotate(45deg); }\n.ip-close::after { transform: rotate(-45deg); }\n\n.ip-eyebrow {\n  margin-bottom: 10px;\n  padding-right: 34px;\n  font-size: 11px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: rgba(255, 255, 255, 0.55);\n}\n\n/* every scene but the one the visitor is standing in */\n.ip-scene { display: none; }\n.ip-scene[data-tour-current] { display: block; }\n\n.ip-name {\n  margin: 0 0 12px;\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: 0.01em;\n}\n.ip-name::after {\n  content: \"\";\n  display: block;\n  width: 34px;\n  height: 2px;\n  margin-top: 12px;\n  border-radius: 2px;\n  background: var(--tour-accent, #634469);\n}\n\n.ip-text {\n  margin: 0;\n  font-size: 13.5px;\n  line-height: 1.62;\n  color: rgba(255, 255, 255, 0.80);\n  white-space: pre-wrap;\n}\n\n/* ---- bottom nav ------------------------------------------------------ */\n/* One repeat of every scene. Only three of them are ever drawn: the room\n   the visitor is in (the label), the one before it and the one after it\n   (the arrows). The rest stay hidden. */\n.nb {\n  position: absolute;\n  bottom: calc(22px + env(safe-area-inset-bottom, 0px));\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 20;\n  box-sizing: border-box;\n  max-width: calc(100vw - 24px);\n  color: #fff;\n  font-size: 13px;\n  pointer-events: auto;\n\n  /* glass */\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.10);\n  border: 1px solid rgba(255, 255, 255, 0.22);\n  backdrop-filter: blur(18px) saturate(160%);\n  -webkit-backdrop-filter: blur(18px) saturate(160%);\n  box-shadow:\n    0 8px 32px rgba(0, 0, 0, 0.32),\n    inset 0 1px 0 rgba(255, 255, 255, 0.28);\n}\n\n.nb-track {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n  width: min(380px, calc(100vw - 24px));\n  height: 52px;\n  padding: 0 56px;\n}\n\n/* every scene but the three we want */\n.nb-item {\n  display: none;\n  min-width: 0;\n  border: 0;\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  cursor: pointer;\n}\n\n/* the middle: the room the visitor is in */\n.nb-item[data-tour-current] {\n  display: block;\n  max-width: 100%;\n  pointer-events: none;\n  cursor: default;\n  font-weight: 600;\n  letter-spacing: 0.01em;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);\n}\n.nb-item[data-tour-current] .nb-name {\n  display: block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n/* the arrows: the scene just before, and just after, the current one */\n.nb-item:has(+ [data-tour-current]),\n.nb-item[data-tour-current] + .nb-item {\n  position: absolute;\n  top: 50%;\n  display: grid;\n  place-items: center;\n  width: 36px;\n  height: 36px;\n  margin-top: -18px;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.12);\n  transition: background-color 0.15s ease-out, transform 0.15s ease-out;\n}\n.nb-item:has(+ [data-tour-current]) { left: 8px; }\n.nb-item[data-tour-current] + .nb-item { right: 8px; }\n\n.nb-item:has(+ [data-tour-current]):hover,\n.nb-item[data-tour-current] + .nb-item:hover {\n  background: rgba(255, 255, 255, 0.24);\n}\n.nb-item:has(+ [data-tour-current]):active,\n.nb-item[data-tour-current] + .nb-item:active {\n  transform: scale(0.92);\n}\n\n/* the arrow's own name is the label of the room it leads to — hide it,\n   the chevron says enough */\n.nb-item:has(+ [data-tour-current]) .nb-name,\n.nb-item[data-tour-current] + .nb-item .nb-name {\n  display: none;\n}\n\n/* chevrons, drawn from two borders */\n.nb-item:has(+ [data-tour-current])::before,\n.nb-item[data-tour-current] + .nb-item::before {\n  content: \"\";\n  width: 9px;\n  height: 9px;\n  border-top: 2px solid currentColor;\n  border-right: 2px solid currentColor;\n  border-radius: 1px;\n}\n.nb-item:has(+ [data-tour-current])::before {\n  transform: translateX(2px) rotate(-135deg);\n}\n.nb-item[data-tour-current] + .nb-item::before {\n  transform: translateX(-2px) rotate(45deg);\n}\n\n/* ---- tablet ----------------------------------------------------------- */\n@media (max-width: 1100px) {\n  /* the bar reaches the pill — drop the words, keep the \"i\" */\n  .ip-open { padding: 0; width: 40px; justify-content: center; }\n  .ip-open-text { display: none; }\n  .ip-open-mark { width: 28px; height: 28px; font-size: 14px; }\n}\n\n@media (max-width: 860px) {\n  .tm { gap: 12px; padding-left: 16px; }\n  .tm-btn { padding: 7px 11px; }\n  .tm-panel-scenes { grid-template-columns: repeat(2, 132px); }\n}\n\n/* ---- phones: the bar becomes one drop-down ---------------------------- */\n@media (max-width: 640px) {\n  .tm {\n    top: calc(10px + env(safe-area-inset-top, 0px));\n    gap: 10px;\n    width: calc(100vw - 20px);\n    max-width: 420px;\n    padding: 7px 7px 7px 16px;\n    justify-content: space-between;\n  }\n\n  .tm-brand {\n    display: block;\n    min-width: 0;\n    font-size: 13px;\n  }\n\n  /* the hamburger */\n  .tm-burger {\n    display: grid;\n    place-content: center;\n    gap: 4px;\n    flex: none;\n    width: 38px;\n    height: 38px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0.14);\n    cursor: pointer;\n    transition: background-color 0.15s ease-out;\n    -webkit-tap-highlight-color: transparent;\n  }\n  .tm-burger:active { background: rgba(255, 255, 255, 0.26); }\n  .tm-burger span {\n    display: block;\n    width: 16px;\n    height: 2px;\n    border-radius: 2px;\n    background: currentColor;\n    transition: transform 0.18s ease-out, opacity 0.12s ease-out;\n  }\n\n  /* open state: the bars become a cross */\n  .tm-toggle:checked ~ .tm-burger { background: rgba(255, 255, 255, 0.26); }\n  .tm-toggle:checked ~ .tm-burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }\n  .tm-toggle:checked ~ .tm-burger span:nth-child(2) { opacity: 0; }\n  .tm-toggle:checked ~ .tm-burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }\n\n  /* the drop-down itself: every section stacked in one scrolling sheet */\n  .tm-nav {\n    position: absolute;\n    top: calc(100% + 10px);\n    left: 0;\n    right: 0;\n    display: block;\n    box-sizing: border-box;\n    max-height: calc(100vh - 150px - env(safe-area-inset-top, 0px));\n    max-height: calc(100dvh - 150px - env(safe-area-inset-top, 0px));\n    padding: 8px;\n    border-radius: 20px;\n    overflow-y: auto;\n    overscroll-behavior: contain;\n    -webkit-overflow-scrolling: touch;\n    scrollbar-width: thin;\n\n    opacity: 0;\n    visibility: hidden;\n    transform: translateY(-8px);\n    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0.18s;\n\n    background: rgba(20, 22, 28, 0.55);\n    border: 1px solid rgba(255, 255, 255, 0.18);\n    backdrop-filter: blur(22px) saturate(160%);\n    -webkit-backdrop-filter: blur(22px) saturate(160%);\n    box-shadow:\n      0 16px 40px rgba(0, 0, 0, 0.44),\n      inset 0 1px 0 rgba(255, 255, 255, 0.22);\n  }\n  .tm-toggle:checked ~ .tm-nav {\n    opacity: 1;\n    visibility: visible;\n    transform: translateY(0);\n  }\n\n  /* sections read as headed lists, not as nested menus */\n  .tm-group + .tm-group {\n    margin-top: 6px;\n    padding-top: 6px;\n    border-top: 1px solid rgba(255, 255, 255, 0.12);\n  }\n\n  .tm-btn {\n    width: 100%;\n    padding: 6px 8px;\n    border-radius: 8px;\n    text-align: left;\n    font-size: 11px;\n    font-weight: 600;\n    letter-spacing: 0.06em;\n    text-transform: uppercase;\n    color: rgba(255, 255, 255, 0.55);\n    pointer-events: none;\n  }\n  .tm-btn:hover,\n  .tm-group:focus-within .tm-btn { background: transparent; }\n\n  /* panels stop being panels — they sit in the flow of the sheet */\n  .tm-panel,\n  .tm-group:hover .tm-panel,\n  .tm-group:focus-within .tm-panel {\n    position: static;\n    transform: none;\n    width: auto;\n    padding: 0 4px 4px;\n    opacity: 1;\n    visibility: visible;\n    background: none;\n    border: 0;\n    backdrop-filter: none;\n    -webkit-backdrop-filter: none;\n    box-shadow: none;\n    transition: none;\n  }\n  .tm-panel::before { display: none; }\n\n  /* scenes: a list of rows, thumb beside the name */\n  .tm-panel-scenes {\n    display: block;\n    max-height: none;\n    overflow: visible;\n  }\n  .tm-scene {\n    flex-direction: row;\n    align-items: center;\n    gap: 10px;\n    width: 100%;\n    padding: 6px 8px;\n    font-size: 13px;\n  }\n  .tm-scene + .tm-scene { margin-top: 2px; }\n  .tm-scene-thumb {\n    flex: none;\n    width: 54px;\n    border-radius: 5px;\n  }\n  .tm-scene-name { min-width: 0; }\n\n  .tm-panel-text { font-size: 12.5px; }\n  .tm-panel-text h3 { display: none; }\n\n  /* ---- the info sidebar on phones -----------------------------------\n     The bar owns the top of the screen, so the pill sits down beside the\n     bottom nav, and the sidebar comes up as a sheet from the bottom. */\n  .ip-open {\n    top: auto;\n    right: 12px;\n    bottom: calc(16px + env(safe-area-inset-bottom, 0px));\n    width: 44px;\n    height: 44px;\n  }\n  .ip-toggle:checked ~ .ip-open { transform: translateY(12px); }\n\n  .ip {\n    top: auto;\n    right: 10px;\n    left: 10px;\n    bottom: calc(10px + env(safe-area-inset-bottom, 0px));\n    width: auto;\n    max-height: 62vh;\n    max-height: 62dvh;\n    padding: 20px;\n    transform: translateY(18px);\n  }\n  .ip-toggle:checked ~ .ip { transform: translateY(0); }\n\n  .ip-name { font-size: 17px; }\n  .ip-text { font-size: 13px; }\n\n  /* ---- bottom bar stays inside the screen ---------------------------- */\n  .nb {\n    bottom: calc(14px + env(safe-area-inset-bottom, 0px));\n    max-width: calc(100vw - 20px);\n    font-size: 12px;\n  }\n  .nb-track {\n    width: min(320px, calc(100vw - 20px));\n    height: 48px;\n    padding: 0 50px;\n  }\n}\n\n/* ---- very small phones ------------------------------------------------ */\n@media (max-width: 380px) {\n  .tm { padding-left: 13px; gap: 8px; }\n  .tm-brand { font-size: 12px; }\n\n  .nb-track {\n    width: calc(100vw - 20px);\n    height: 44px;\n    padding: 0 46px;\n  }\n  .nb-item:has(+ [data-tour-current]),\n  .nb-item[data-tour-current] + .nb-item {\n    width: 32px;\n    height: 32px;\n    margin-top: -16px;\n  }\n\n  /* the nav pill and the info button share the row */\n  .ip-open { width: 40px; height: 40px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }\n}\n\n/* ---- short / landscape phones ----------------------------------------- */\n@media (max-height: 460px) and (max-width: 900px) {\n  .tm { top: calc(8px + env(safe-area-inset-top, 0px)); }\n  .tm-nav { max-height: calc(100vh - 90px); max-height: calc(100dvh - 90px); }\n  .nb { bottom: calc(10px + env(safe-area-inset-bottom, 0px)); }\n  .nb-track { height: 44px; }\n\n  .ip {\n    top: calc(8px + env(safe-area-inset-top, 0px));\n    left: auto;\n    right: 10px;\n    bottom: 10px;\n    width: min(340px, calc(100vw - 20px));\n    max-height: none;\n    padding: 16px 18px;\n    transform: translateX(16px);\n  }\n  .ip-toggle:checked ~ .ip { transform: translateX(0); }\n}\n"},"runtime":{"autoRotate":{"enabled":false,"speed":0.5,"idleDelayMs":4000},"gyroscope":true,"fullscreenButton":true,"audio":{"muted":false},"startSceneId":"scene-821e9621"}}</script>
+  <script src="./player/player.js"></script>
+</body>
+</html>
